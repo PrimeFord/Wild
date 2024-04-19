@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+:root {
+  font-family: "Tw Cen MT", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@tailwind utilities;
+@font-face {
+  font-family: "Ronet DEMO";
+  src: url("https://db.onlinewebfonts.com/t/12813af9824c2f540b4ff47ef265c20b.eot");
+  src: url("https://db.onlinewebfonts.com/t/12813af9824c2f540b4ff47ef265c20b.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/12813af9824c2f540b4ff47ef265c20b.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/12813af9824c2f540b4ff47ef265c20b.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/12813af9824c2f540b4ff47ef265c20b.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/12813af9824c2f540b4ff47ef265c20b.svg#Ronet DEMO")
+      format("svg");
+}

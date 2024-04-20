@@ -1,37 +1,40 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import MainContainer from "./layouts/MainContainer";
-import { IoPlay } from "react-icons/io5";
-// import song from "./../public/audios/live.mp3";
-// import Slider from "./components/slider/Slider";
+// import { IoPlay } from "react-icons/io5";
+import song from "/audios/live.mp3";
+import Slider from "./components/slider/Slider";
+import { IoMdPause, IoMdPlay } from "react-icons/io";
 
 function App() {
   const [show, setShow] = useState(false);
-  // const [percentage, setPercentage] = useState(0);
-  // const [playing, setPlaying] = useState(false);
+  const [percentage, setPercentage] = useState(0);
+  const [playing, setPlaying] = useState(false);
   // const [time, setTime] = useState(0);
   // const [currentTime, setCurrentTime] = useState(0);
-  // const audioRef = useRef();
-  // const handlePercentage = (e: any) => {
-  //   const audio = audioRef.current;
-  //   audio.currentTime = (time / 100) * e.target.value;
-  //   setPercentage(e.target.value);
-  // };
-  // const play: () => void = () => {
-  //   const audio = audioRef.current;
-  //   audio.volume = 0.1;
+  const audioRef = useRef(null);
 
-  //   if (!playing) {
-  //     setPlaying(true);
-  //     audio.play();
-  //   }
+  const handlePercentage = (e: any) => {
+    // const audio = audioRef.current;
+    // audio.currentTime = (time / 100) * e.target.value;
+    setPercentage(e.target.value);
+  };
 
-  //   if (playing) {
-  //     setPlaying(false);
-  //     audio.pause();
-  //   }
-  // };
+  const play: () => void = () => {
+    const audio = audioRef.current;
+    audio.volume = 0.1;
+
+    if (!playing) {
+      setPlaying(true);
+      audio.play();
+    }
+
+    if (playing) {
+      setPlaying(false);
+      audio.pause();
+    }
+  };
 
   // const getCurrDuration = (e: any) => {
   //   const percent = (
@@ -102,21 +105,22 @@ function App() {
             {/* <p className="ronet">Happy</p> */}
             <button
               className="h-10 w-10 mx-auto flex justify-center items-center border-[2px] border-solid border-white  hover:scale-110 mt-4 lg:mt-3 rounded-[50%]"
-              // onClick={play}
+              onClick={play}
             >
-              play
-              <IoPlay />
-              {/* {playing ? <IoPause /> : <IoPlay />} */}
+              {playing ? <IoMdPause /> : <IoMdPlay />}
             </button>
-            {/* <Slider percentage={percentage} handlePercentage={setPercentage} /> */}
-            {/* <audio
+            <Slider
+              percentage={percentage}
+              handlePercentage={handlePercentage}
+            />
+            <audio
               src={song}
               ref={audioRef}
-              onTimeUpdate={getCurrDuration}
-              onLoadedData={(e) => {
-                setTime(e.currentTarget.duration.toFixed(2));
-              }}
-            ></audio> */}
+              // onTimeUpdate={getCurrDuration}
+              // onLoadedData={(e) => {
+              //   setTime(e.currentTarget.duration.toFixed(2));
+              // }}
+            ></audio>
           </div>
         </div>
       </MainContainer>

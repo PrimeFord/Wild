@@ -12,14 +12,14 @@ function App() {
   const [playing, setPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const audioRef = useRef(null);
+  const audioRef = useRef() as any;
 
   const handlePercentage = (e: any) => {
     const audio = audioRef.current;
     audio.currentTime = (audio.duration / 100) * e.target.value;
     setPercentage(e.target.value);
   };
-
+  console.log(duration, currentTime);
   const play: () => void = () => {
     const audio = audioRef.current;
     audio.volume = 0.1;
@@ -135,7 +135,7 @@ function App() {
               src={song}
               ref={audioRef}
               onLoadedData={(e) => {
-                setDuration(e.currentTarget.duration.toFixed(2));
+                setDuration(e.currentTarget.duration);
               }}
               onTimeUpdate={getCurrDuration}
             ></audio>

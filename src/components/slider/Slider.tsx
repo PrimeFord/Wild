@@ -8,11 +8,11 @@ function Slider({ percentage = 0, handlePercentage }: ISlide) {
   const [marginLeft, setMarginLeft] = useState(0);
   const [progressBarWidth, setProgressBarWidth] = useState(0);
 
-  const rangeRef = useRef(null);
-  const thumbRef = useRef(null);
+  const rangeRef = useRef() as any;
+  const thumbRef = useRef(document.createElement("div"));
   useEffect(() => {
-    const rangeWidth: any = rangeRef.current.getBoundingClientRect().width;
-    const thumbWidth: any = thumbRef.current.getBoundingClientRect().width;
+    const rangeWidth = rangeRef.current.getBoundingClientRect().width;
+    const thumbWidth = thumbRef.current.getBoundingClientRect().width;
     const centerThumb = (thumbWidth / 100) * percentage * -1;
     const centerProgressBar =
       thumbWidth +

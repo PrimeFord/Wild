@@ -2,10 +2,8 @@ import { useRef, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import MainContainer from "./layouts/MainContainer";
-// import { IoPlay } from "react-icons/io5";
 import song from "/audios/live.mp3";
 import Slider from "./components/slider/Slider";
-// import { IoMdPause, IoMdPlay } from "react-icons/io";
 import { FaPause, FaPlay } from "react-icons/fa";
 
 function App() {

@@ -33,10 +33,10 @@ Clone or download this repository and run with a local server of open `localhost
 [Preview Here](https://wild-player.vercel.app/)
 
 ## Display on both Laptop and Mobile Phone
-![screenshot](./public/Image/snip.png)
-![screenshot](./public/Image/snip2.png)
-![screenshot](./public/Image/snip3.png)
-![screenshot](./public/Image/snip4.png)
+![screenshot](./public/images/snip.png)
+![screenshot](./public/images/snip2.png)
+![screenshot](./public/images/snip3.png)
+![screenshot](./public/images/snip4.png)
 
 ## Contact
 

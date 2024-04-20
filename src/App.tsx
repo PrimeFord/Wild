@@ -1,51 +1,48 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import MainContainer from "./layouts/MainContainer";
-import { IoPlay, IoPause } from "react-icons/io5";
-import song from "./../public/audios/live.mp3";
-import Slider from "./components/slider/Slider";
+import { IoPlay } from "react-icons/io5";
+// import song from "./../public/audios/live.mp3";
+// import Slider from "./components/slider/Slider";
 
 function App() {
   const [show, setShow] = useState(false);
-  const [percentage, setPercentage] = useState(0);
-  const [playing, setPlaying] = useState(false);
-  const [time, setTime] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-  const audioRef = useRef();
+  // const [percentage, setPercentage] = useState(0);
+  // const [playing, setPlaying] = useState(false);
+  // const [time, setTime] = useState(0);
+  // const [currentTime, setCurrentTime] = useState(0);
+  // const audioRef = useRef();
+  // const handlePercentage = (e: any) => {
+  //   const audio = audioRef.current;
+  //   audio.currentTime = (time / 100) * e.target.value;
+  //   setPercentage(e.target.value);
+  // };
+  // const play: () => void = () => {
+  //   const audio = audioRef.current;
+  //   audio.volume = 0.1;
 
-  const play: () => void = () => {
-    const audio = audioRef.current;
-    audio.volume = 0.1;
+  //   if (!playing) {
+  //     setPlaying(true);
+  //     audio.play();
+  //   }
 
-    if (!playing) {
-      setPlaying(true);
-      audio.play();
-    }
+  //   if (playing) {
+  //     setPlaying(false);
+  //     audio.pause();
+  //   }
+  // };
 
-    if (playing) {
-      setPlaying(false);
-      audio.pause();
-    }
-  };
+  // const getCurrDuration = (e: any) => {
+  //   const percent = (
+  //     (e.currentTarget.current / e.currentTarget.time) *
+  //     100
+  //   ).toFixed(2);
+  //   const times = e.currentTarget.currentTime;
 
-  const handlePercentage = (e: any) => {
-    const audio = audioRef.current;
-    audio.currentTime = (audio.time / 100) * e.target.value;
-    setPercentage(e.target.value);
-  };
-  console.log(audioRef);
-
-  const getCurrDuration = (e: any) => {
-    const percent = (
-      (e.currentTarget.current / e.currentTarget.time) *
-      100
-    ).toFixed(2);
-    const times = e.currentTarget.currentTime;
-
-    setPercentage(+percent);
-    setCurrentTime(times.toFixed(2));
-  };
+  //   setPercentage(+percent);
+  //   setCurrentTime(times.toFixed(2));
+  // };
 
   return (
     <>
@@ -105,22 +102,20 @@ function App() {
             {/* <p className="ronet">Happy</p> */}
             <button
               className="h-10 w-10 mx-auto flex justify-center items-center border-[2px] border-solid border-white  hover:scale-110 mt-4 lg:mt-3 rounded-[50%]"
-              onClick={play}
+              // onClick={play}
             >
-              {playing ? <IoPause /> : <IoPlay />}
+              <IoPlay />
+              {/* {playing ? <IoPause /> : <IoPlay />} */}
             </button>
-            <Slider
-              percentage={percentage}
-              handlePercentage={handlePercentage}
-            />
-            <audio
+            {/* <Slider percentage={percentage} handlePercentage={setPercentage} /> */}
+            {/* <audio
               src={song}
               ref={audioRef}
               onTimeUpdate={getCurrDuration}
               onLoadedData={(e) => {
                 setTime(e.currentTarget.duration.toFixed(2));
               }}
-            ></audio>
+            ></audio> */}
           </div>
         </div>
       </MainContainer>

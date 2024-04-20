@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import MainContainer from "./layouts/MainContainer";
-import { IoPlay } from "react-icons/io5";
+// import { IoPlay } from "react-icons/io5";
 // import song from "./../public/audios/live.mp3";
 // import Slider from "./components/slider/Slider";
 
@@ -104,7 +104,8 @@ function App() {
               className="h-10 w-10 mx-auto flex justify-center items-center border-[2px] border-solid border-white  hover:scale-110 mt-4 lg:mt-3 rounded-[50%]"
               // onClick={play}
             >
-              <IoPlay />
+              play
+              {/* <IoPlay /> */}
               {/* {playing ? <IoPause /> : <IoPlay />} */}
             </button>
             {/* <Slider percentage={percentage} handlePercentage={setPercentage} /> */}

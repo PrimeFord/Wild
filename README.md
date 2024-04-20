@@ -1,4 +1,4 @@
-# Spotta
+# Wild Life Player
 
 Wild Life Player: This project is a brief test on a custom music player for new single songs released by your favourite artists.
 

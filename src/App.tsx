@@ -57,7 +57,7 @@ function App() {
             alt="Angle"
           />
           <img
-            className="hidden lg:flex absolute lg:h-[100%] lg:top-0"
+            className="hidden lg:flex absolute lg:h-[100%] lg:right-0 lg:top-0"
             src="/images/5ive.png"
             alt="Bg_vector"
           />
@@ -112,7 +112,7 @@ function App() {
                 //   style={{ color: "#fff" }}
                 //   aria-hidden="true"
                 // ></i>
-                <FaPause/>
+                <FaPause />
               ) : (
                 // <i
                 //   className="fa fa-play"

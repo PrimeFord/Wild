@@ -5,7 +5,8 @@ import MainContainer from "./layouts/MainContainer";
 // import { IoPlay } from "react-icons/io5";
 import song from "/audios/live.mp3";
 import Slider from "./components/slider/Slider";
-import { IoMdPause, IoMdPlay } from "react-icons/io";
+// import { IoMdPause, IoMdPlay } from "react-icons/io";
+import { FaPause, FaPlay } from "react-icons/fa";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -107,7 +108,26 @@ function App() {
               className="h-10 w-10 mx-auto flex justify-center items-center border-[2px] border-solid border-white  hover:scale-110 mt-4 lg:mt-3 rounded-[50%]"
               onClick={play}
             >
-              {playing ? <IoMdPause /> : <IoMdPlay />}
+              {playing ? (
+                // <i
+                //   className="fa fa-pause"
+                //   style={{ color: "#fff" }}
+                //   aria-hidden="true"
+                // ></i>
+                <FaPause/>
+              ) : (
+                // <i
+                //   className="fa fa-play"
+                //   style={{
+                //     color: "#fff",
+                //     fontSize: "1rem",
+                //     height: "1rem",
+                //     width: "1rem",
+                //   }}
+                //   aria-hidden="true"
+                // ></i>
+                <FaPlay />
+              )}
             </button>
             <Slider
               percentage={percentage}

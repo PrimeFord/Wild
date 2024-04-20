@@ -11,13 +11,13 @@ function App() {
   const [show, setShow] = useState(false);
   const [percentage, setPercentage] = useState(0);
   const [playing, setPlaying] = useState(false);
-  // const [time, setTime] = useState(0);
-  // const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
   const audioRef = useRef(null);
 
   const handlePercentage = (e: any) => {
-    // const audio = audioRef.current;
-    // audio.currentTime = (time / 100) * e.target.value;
+    const audio = audioRef.current;
+    audio.currentTime = (audio.duration / 100) * e.target.value;
     setPercentage(e.target.value);
   };
 
@@ -36,16 +36,16 @@ function App() {
     }
   };
 
-  // const getCurrDuration = (e: any) => {
-  //   const percent = (
-  //     (e.currentTarget.current / e.currentTarget.time) *
-  //     100
-  //   ).toFixed(2);
-  //   const times = e.currentTarget.currentTime;
+  const getCurrDuration = (e: any) => {
+    const percent = (
+      (e.currentTarget.currentTime / e.currentTarget.duration) *
+      100
+    ).toFixed(2);
+    const times = e.currentTarget.currentTime;
 
-  //   setPercentage(+percent);
-  //   setCurrentTime(times.toFixed(2));
-  // };
+    setPercentage(+percent);
+    setCurrentTime(times.toFixed(2));
+  };
 
   return (
     <>
@@ -116,10 +116,10 @@ function App() {
             <audio
               src={song}
               ref={audioRef}
-              // onTimeUpdate={getCurrDuration}
-              // onLoadedData={(e) => {
-              //   setTime(e.currentTarget.duration.toFixed(2));
-              // }}
+              onLoadedData={(e) => {
+                setDuration(e.currentTarget.duration.toFixed(2));
+              }}
+              onTimeUpdate={getCurrDuration}
             ></audio>
           </div>
         </div>

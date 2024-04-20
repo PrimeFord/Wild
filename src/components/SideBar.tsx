@@ -49,24 +49,29 @@ const SideBar = ({ show }: { show: boolean }) => {
           </>
         ) : (
           <>
+            <div className="lg:hidden text-center">
+              <img className="h-10" src="/images/logo.svg" alt="Logo" />
+            </div>
             <div
-              className={`text-white mt-[2.5rem] flex flex-col gap-2 ${
+              className={`text-white flex justify-around items-center flex-col gap-2 ${
                 show
-                  ? "transition delay-700 lg:delay-400 duration-700 lg:duration-400 ease-in-out"
+                  ? "transition delay-400 duration-400 ease-in-out"
                   : "transition delay-300 duration-300 ease-in-out"
               }`}
             >
-              <p className="text-[1.5rem] text-center hover:scale-110">
+              <p className="text-[1.2rem] lg:text-[1.5rem] text-center hover:scale-110">
                 ARTISTS
               </p>
-              <p className="text-[1.5rem] text-center hover:scale-110">
+              <p className="text-[1.2rem] lg:text-[1.5rem] text-center hover:scale-110">
                 SERVICES
               </p>
-              <p className="text-[1.5rem] text-center hover:scale-110">
+              <p className="text-[1.2rem] lg:text-[1.5rem] text-center hover:scale-110">
                 DISCOGRAPHY
               </p>
-              <p className="text-[1.5rem] text-center hover:scale-110">ABOUT</p>
-              <p className="text-[1.5rem] text-center hover:scale-110">
+              <p className="text-[1.2rem] lg:text-[1.5rem] text-center hover:scale-110">
+                ABOUT
+              </p>
+              <p className="text-[1.2rem] lg:text-[1.5rem] text-center hover:scale-110">
                 CONTACT
               </p>
             </div>

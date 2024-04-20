@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import "./slider.css";
-// import "./thumb.css";
 
 type ISlide = { percentage: number; handlePercentage: (e: any) => void };
 
@@ -14,9 +13,6 @@ function Slider({ percentage = 0, handlePercentage }: ISlide) {
   useEffect(() => {
     const rangeWidth: any = rangeRef.current.getBoundingClientRect().width;
     const thumbWidth: any = thumbRef.current.getBoundingClientRect().width;
-    // const thumbWidth = 20;
-    // console.log(thumbWidth);
-    // console.log(rangeWidth);
     const centerThumb = (thumbWidth / 100) * percentage * -1;
     const centerProgressBar =
       thumbWidth +
@@ -42,9 +38,7 @@ function Slider({ percentage = 0, handlePercentage }: ISlide) {
           left: `${position}%`,
           marginLeft: `${marginLeft}px`,
         }}
-      >
-        <div className="h-4 w-4 bg-primary rounded-[50%]"></div>
-      </div>
+      ></div>
       <input
         type="range"
         value={position}

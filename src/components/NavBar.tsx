@@ -6,7 +6,7 @@ const NavBar = ({ show, setShow }: IShow) => {
       className={`w-[100%] z-20 lg:w-[95%] h-[5rem] fixed flex items-center px-[2rem]`}
     >
       <div className="flex-1">
-        <img className=" h-8" src="/images/logo.svg" alt="Logo" />
+        <img className="h-10 lg:h-8" src="/images/logo.svg" alt="Logo" />
       </div>
       <div className="flex items-center gap-6">
         <img

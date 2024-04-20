@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import MainContainer from "./layouts/MainContainer";
-// import { IoPlay } from "react-icons/io5";
+import { IoPlay } from "react-icons/io5";
 // import song from "./../public/audios/live.mp3";
 // import Slider from "./components/slider/Slider";
 
@@ -105,7 +105,7 @@ function App() {
               // onClick={play}
             >
               play
-              {/* <IoPlay /> */}
+              <IoPlay />
               {/* {playing ? <IoPause /> : <IoPlay />} */}
             </button>
             {/* <Slider percentage={percentage} handlePercentage={setPercentage} /> */}
